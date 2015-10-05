@@ -14,7 +14,8 @@
   "repository": "domenic/wpt-runner",
   "main": "lib/wpt-runner.js",
   "files": [
-    "lib/"
+    "lib/",
+    "testharness.js/testharness.js"
   ],
   "scripts": {
     "test": "mocha",
