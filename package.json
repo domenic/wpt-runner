@@ -1,0 +1,30 @@
+{
+  "name": "wpt-runner",
+  "description": "Runs web platform tests in Node.js using jsdom",
+  "keywords": [
+    "testing",
+    "web platform tests",
+    "wpt",
+    "test runner",
+    "jsdom"
+  ],
+  "version": "1.0.0-pre",
+  "author": "Domenic Denicola <d@domenic.me> (https://domenic.me/)",
+  "license": "WTFPL",
+  "repository": "domenic/wpt-runner",
+  "main": "lib/wpt-runner.js",
+  "files": [
+    "lib/"
+  ],
+  "scripts": {
+    "test": "mocha",
+    "lint": "eslint lib"
+  },
+  "dependencies": {
+    "jsdom": "^6.5.1"
+  },
+  "devDependencies": {
+    "eslint": "^1.6.0",
+    "mocha": "^2.2.4"
+  }
+}
