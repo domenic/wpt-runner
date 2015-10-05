@@ -24,6 +24,7 @@
     "lint": "eslint lib && eslint bin"
   },
   "dependencies": {
+    "colors": "^1.1.2",
     "jsdom": "^6.5.1",
     "recursive-readdir": "^1.2.1",
     "st": "^1.0.0"
