@@ -13,8 +13,10 @@
   "license": "WTFPL",
   "repository": "domenic/wpt-runner",
   "main": "lib/wpt-runner.js",
+  "bin": "bin/wpt-runner.js",
   "files": [
     "lib/",
+    "bin/",
     "testharness.js/testharness.js"
   ],
   "scripts": {
@@ -22,7 +24,9 @@
     "lint": "eslint lib"
   },
   "dependencies": {
-    "jsdom": "^6.5.1"
+    "jsdom": "^6.5.1",
+    "recursive-readdir": "^1.2.1",
+    "st": "^1.0.0"
   },
   "devDependencies": {
     "eslint": "^1.6.0",
