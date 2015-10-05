@@ -21,7 +21,7 @@
   ],
   "scripts": {
     "test": "mocha",
-    "lint": "eslint lib"
+    "lint": "eslint lib && eslint bin"
   },
   "dependencies": {
     "jsdom": "^6.5.1",
