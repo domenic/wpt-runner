@@ -25,11 +25,12 @@
   },
   "dependencies": {
     "colors": "^1.1.2",
-    "jsdom": "^6.5.1",
-    "recursive-readdir": "^1.2.1",
-    "st": "^1.0.0"
+    "jsdom": "^9.4.2",
+    "recursive-readdir": "^2.0.0",
+    "st": "^1.2.0",
+    "yargs": "^5.0.0"
   },
   "devDependencies": {
-    "eslint": "^1.6.0"
+    "eslint": "^3.4.0"
   }
 }
