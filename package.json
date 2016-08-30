@@ -8,7 +8,7 @@
     "test runner",
     "jsdom"
   ],
-  "version": "2.0.0",
+  "version": "2.0.1",
   "author": "Domenic Denicola <d@domenic.me> (https://domenic.me/)",
   "license": "WTFPL",
   "repository": "domenic/wpt-runner",
