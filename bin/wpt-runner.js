@@ -2,12 +2,39 @@
 "use strict";
 /* eslint-disable no-console */
 const path = require("path");
-const wptRunner = require("../lib/wpt-runner.js");
+const wptRunner = require("..");
+const packageJSON = require("../package.json");
 
-const testsPath = process.argv[2];
-const setup = process.argv[3] ? require(path.resolve(process.argv[3])) : () => {};
+const usage = packageJSON.description + "\n\n" + packageJSON.name +
+              " <tests-path> [--root-url=<url/of/tests/>] [--setup=<setup-module.js>]";
 
-wptRunner(testsPath, setup)
+const argv = require("yargs")
+  .usage(usage, {
+    "root-url": {
+      description: "the relative URL path for the tests, e.g. dom/nodes/",
+      type: "string",
+      alias: "u",
+      require: false,
+      requiresArg: true
+    },
+    setup: {
+      description: "the filename of a setup function module",
+      type: "string",
+      alias: "s",
+      require: false,
+      requiresArg: true
+    }
+  })
+  .require(1, "Missing required tests path argument")
+  .addHelpOpt("help")
+  .version(packageJSON.version)
+  .argv;
+
+const testsPath = argv._[0];
+const rootURL = argv["root-url"];
+const setup = argv.setup ? require(path.resolve(argv.setup)) : () => {};
+
+wptRunner(testsPath, { rootURL, setup })
   .then(failures => process.exit(failures))
   .catch(e => {
     console.error(e.stack);

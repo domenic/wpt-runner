@@ -11,19 +11,20 @@ So for example, it might be useful if you're developing a polyfill or reference 
 
 ## Command-line Usage
 
-After installing, you can do
+```
+$ node bin/wpt-runner.js
+Runs web platform tests in Node.js using jsdom
 
-```bash
-$ wpt-runner directory-of-test-files
+wpt-runner <tests-path> [--root-url=<url/of/tests/>] [--setup=<setup-module.js>]
+
+Options:
+  --root-url, -u  the relative URL path for the tests, e.g. dom/nodes/  [string]
+  --setup, -s     the filename of a setup function module               [string]
+  --help          Show help                                            [boolean]
+  --version       Show version number                                  [boolean]
 ```
 
-You can also pass your setup file:
-
-```bash
-$ wpt-runner directory-of-test-files setup.js
-```
-
-This will run all `.html` files found by recursively crawling the specified directory. The program's exit code will be the number of failing files encountered (`0` for success).
+This will run all `.html` files found by recursively crawling the specified directory, optionally mounted to the specified root URL and using the specified setup function. The program's exit code will be the number of failing files encountered (`0` for success).
 
 ## Programmatic Usage
 
@@ -32,7 +33,7 @@ The setup is fairly similar. Here is a usage example:
 ```js
 const wptRunner = require("wpt-runner");
 
-wptRunner(testsPath, setup)
+wptRunner(testsPath, { rootURL, setup, reporter })
   .then(failures => process.exit(failures))
   .catch(e => {
     console.error(e.stack);
@@ -40,4 +41,10 @@ wptRunner(testsPath, setup)
   });
 ```
 
-The `setup` argument is optional, and there's an optional third argument which allows passing a custom reporter instead of one that outputs to the console. (Check out `lib/console-reporter.js` for an example.) The returned promise fulfills with the number of failing files encountered (`0` for success), or rejects if there was some I/O error retrieving the files.
+The options are:
+
+- `rootURL`: the URL at which to mount the tests (so that they resolve any relative URLs correctly)
+- `setup`: a setup function to run in the jsdom environment before running the tests
+- `reporter`: an object which can be used to customize the output reports, instead of the default of reporting to the console. (Check out `lib/console-reporter.js` for an example of the object structure.)
+
+The returned promise fulfills with the number of failing files encountered (`0` for success), or rejects if there was some I/O error retrieving the files.
