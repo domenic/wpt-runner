@@ -11,14 +11,14 @@ const usage = packageJSON.description + "\n\n" + packageJSON.name +
 const argv = require("yargs")
   .usage(usage, {
     "root-url": {
-      description: "the relative URL path for the tests, e.g. dom/nodes/",
+      description: "The relative URL path for the tests, e.g. dom/nodes/",
       type: "string",
       alias: "u",
       require: false,
       requiresArg: true
     },
     setup: {
-      description: "the filename of a setup function module",
+      description: "The filename of a setup function module",
       type: "string",
       alias: "s",
       require: false,
@@ -26,8 +26,8 @@ const argv = require("yargs")
     }
   })
   .require(1, "Missing required tests path argument")
-  .addHelpOpt("help")
-  .version(packageJSON.version)
+  .help(false)
+  .version()
   .argv;
 
 const testsPath = argv._[0];
