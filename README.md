@@ -33,7 +33,7 @@ The setup is fairly similar. Here is a usage example:
 ```js
 const wptRunner = require("wpt-runner");
 
-wptRunner(testsPath, { rootURL, setup, reporter })
+wptRunner(testsPath, { rootURL, setup, filter, reporter })
   .then(failures => process.exit(failures))
   .catch(e => {
     console.error(e.stack);
@@ -43,8 +43,9 @@ wptRunner(testsPath, { rootURL, setup, reporter })
 
 The options are:
 
-- `rootURL`: the URL at which to mount the tests (so that they resolve any relative URLs correctly)
-- `setup`: a setup function to run in the jsdom environment before running the tests
+- `rootURL`: the URL at which to mount the tests (so that they resolve any relative URLs correctly).
+- `setup`: a setup function to run in the jsdom environment before running the tests.
+- `filter`: a function that takes the arguments `testPath` and `testURL` and returns true or false (or a promise for one of those) to indicate whether the test should run. Defaults to no filtering
 - `reporter`: an object which can be used to customize the output reports, instead of the default of reporting to the console. (Check out `lib/console-reporter.js` for an example of the object structure.)
 
 The returned promise fulfills with the number of failing files encountered (`0` for success), or rejects if there was some I/O error retrieving the files.
