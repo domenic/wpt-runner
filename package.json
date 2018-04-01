@@ -17,7 +17,7 @@
   "files": [
     "lib/",
     "bin/",
-    "testharness.js/testharness.js"
+    "web-platform-tests/resources/testharness.js"
   ],
   "scripts": {
     "test": "mocha",
