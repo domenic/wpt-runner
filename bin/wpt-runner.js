@@ -3,34 +3,24 @@
 /* eslint-disable no-console, no-process-exit */
 const path = require("path");
 const wptRunner = require("..");
-const packageJSON = require("../package.json");
-
-const usage = packageJSON.description + "\n\n" + packageJSON.name +
-              " <tests-path> [--root-url=<url/of/tests/>] [--setup=<setup-module.js>]";
 
 const argv = require("yargs")
-  .usage(usage, {
-    "root-url": {
-      description: "The relative URL path for the tests, e.g. dom/nodes/",
-      type: "string",
-      alias: "u",
-      require: false,
-      requiresArg: true
-    },
-    setup: {
-      description: "The filename of a setup function module",
-      type: "string",
-      alias: "s",
-      require: false,
-      requiresArg: true
-    }
+  .command("$0 <path>", "Runs the web platform tests at the given path, e.g. wpt/dom/nodes/")
+  .option("root-url", {
+    description: "The relative URL path for the tests at <path>, e.g. dom/nodes/",
+    alias: "u",
+    type: "string",
+    requiresArg: true
   })
-  .require(1, "Missing required tests path argument")
-  .help(false)
-  .version()
+  .option("setup", {
+    description: "The filename of a setup function module",
+    alias: "s",
+    type: "string",
+    requiresArg: true
+  })
   .argv;
 
-const testsPath = argv._[0];
+const testsPath = argv.path;
 const rootURL = argv["root-url"];
 const setup = argv.setup ? require(path.resolve(argv.setup)) : () => {};
 
