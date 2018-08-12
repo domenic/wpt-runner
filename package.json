@@ -17,11 +17,13 @@
   "files": [
     "lib/",
     "bin/",
-    "web-platform-tests/resources/testharness.js"
+    "testharness/"
   ],
   "scripts": {
     "test": "mocha",
-    "lint": "eslint lib bin"
+    "lint": "eslint lib bin",
+    "prepare": "npm run copy-testharness",
+    "copy-testharness": "copyfiles -u 2 web-platform-tests/resources/testharness.js testharness/"
   },
   "dependencies": {
     "colors": "^1.1.2",
@@ -31,6 +33,7 @@
     "yargs": "^6.3.0"
   },
   "devDependencies": {
+    "copyfiles": "^2.0.0",
     "eslint": "^3.9.1"
   }
 }
