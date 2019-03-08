@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script src="/resources/testharness.js"></script>
+<script src="/resources/testharnessreport.js"></script>
+<script src="/resources/testdriver.js"></script>
+<script src="/resources/testdriver-vendor.js"></script>
+<script>
+promise_test(async t => {
+  let flag = 0
+  await test_driver.bless("Pass immediately without waiting user interaction", () => {
+    flag = 1
+  });
+  assert_equals(flag, 1)
+}, "test_driver.bless");
+
+promise_test(async t => {
+  await test_driver.click(window.document.body);
+  assert_true(true);
+}, "test_driver.click");
+
+promise_test(async t => {
+  await test_driver.send_keys(window.document.body);
+  assert_true(true);
+}, "test_driver.send_keys");
+</script>
+</body>
+</html>

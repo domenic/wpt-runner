@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script src="/resources/testharness.js"></script>
+<script src="/resources/testharnessreport.js"></script>
+<script>
+test(t => {
+  assert_true(true);
+}, "test");
+
+promise_test(t => {
+  return Promise.resolve(() => {
+    assert_true(true);
+  });
+}, "promise_test");
+
+</script>
+</body>
+</html>
