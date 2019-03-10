@@ -22,7 +22,8 @@
   "scripts": {
     "test": "node test/runner.js",
     "lint": "eslint lib bin",
-    "prepare": "npm run copy-testharness && npm run copy-resources",
+    "prepare": "npm run copy-testharness",
+    "pretest": "npm run copy-resources",
     "copy-testharness": "copyfiles -u 2 wpt/resources/testharness.js testharness/",
     "copy-resources": "copyfiles -u 2 wpt/resources/testharness.js test/tests/resources/"
   },

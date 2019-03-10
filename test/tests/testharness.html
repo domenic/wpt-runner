@@ -5,13 +5,10 @@
 <script src="/resources/testharnessreport.js"></script>
 <script>
 test(t => {
-  assert_true(true);
 }, "test");
 
 promise_test(t => {
-  return Promise.resolve(() => {
-    assert_true(true);
-  });
+  return Promise.resolve();
 }, "promise_test");
 
 </script>

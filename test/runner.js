@@ -1,16 +1,22 @@
 "use strict";
 
-const wptRunner = require("..");
-
-const testcases = require("./testcases.json");
-const filter = testPath => (testcases[testPath] === true);
-
 const path = require("path");
-const testsPath = path.resolve(__dirname, "./tests/");
+const wptRunner = require("..");
+const { updateTestcaseList } = require("./util");
 
-wptRunner(testsPath, { filter })
-  .then(failure => process.exit(failure))
-  .catch(e => {
-    console.error(e.stack);
-    process.exit(1);
-  });
+const listFilePath = path.join(__dirname, "./testcases.json");
+const testsDirPath = path.join(__dirname, "./tests/");
+
+(async () => {
+
+  const testcases = await updateTestcaseList(listFilePath, testsDirPath);
+  const filter = htmlPath => (testcases[htmlPath] === true);
+
+  wptRunner(testsDirPath, { filter })
+    .then(failure => process.exit(failure))
+    .catch(e => {
+      console.error(e.stack);
+      process.exit(1);
+    });
+
+})();
