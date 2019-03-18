@@ -20,10 +20,12 @@
     "testharness/"
   ],
   "scripts": {
-    "test": "mocha",
-    "lint": "eslint lib bin",
+    "test": "node test/runner.js",
+    "lint": "eslint .",
     "prepare": "npm run copy-testharness",
-    "copy-testharness": "copyfiles -u 2 wpt/resources/testharness.js testharness/"
+    "pretest": "npm run copy-resources",
+    "copy-testharness": "copyfiles -u 2 wpt/resources/testharness.js testharness/",
+    "copy-resources": "copyfiles -u 2 wpt/resources/testharness.js test/tests/resources/"
   },
   "engines": {
     "node": ">= 8"
