@@ -28,7 +28,7 @@
     "copy-resources": "copyfiles -u 2 wpt/resources/testharness.js test/tests/resources/"
   },
   "engines": {
-    "node": ">= 8"
+    "node": ">= 10"
   },
   "dependencies": {
     "colors": "^1.4.0",
