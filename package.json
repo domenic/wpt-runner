@@ -13,7 +13,10 @@
   "license": "WTFPL",
   "repository": "domenic/wpt-runner",
   "main": "lib/wpt-runner.js",
-  "bin": "bin/wpt-runner.js",
+  "bin": {
+    "wpt-runner": "bin/wpt-runner.js",
+    "wpt-server": "bin/wpt-server.js"
+  },
   "files": [
     "lib/",
     "bin/",
