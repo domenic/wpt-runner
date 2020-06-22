@@ -24,7 +24,7 @@
     "lint": "eslint .",
     "prepare": "npm run copy-testharness",
     "pretest": "npm run copy-resources",
-    "copy-testharness": "copyfiles -u 2 wpt/resources/testharness.js testharness/",
+    "copy-testharness": "copyfiles -u 2 wpt/resources/testharness.js wpt/resources/idlharness.js wpt/resources/webidl2/lib/webidl2.js testharness/",
     "copy-resources": "copyfiles -u 2 wpt/resources/testharness.js test/tests/resources/"
   },
   "engines": {
