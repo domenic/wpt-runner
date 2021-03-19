@@ -8,12 +8,14 @@
     "test runner",
     "jsdom"
   ],
-  "version": "3.2.0",
+  "version": "3.2.1",
   "author": "Domenic Denicola <d@domenic.me> (https://domenic.me/)",
   "license": "WTFPL",
   "repository": "domenic/wpt-runner",
   "main": "lib/wpt-runner.js",
-  "bin": "bin/wpt-runner.js",
+  "bin": {
+    "wpt-runner": "bin/wpt-runner.js"
+  },
   "files": [
     "lib/",
     "bin/",
