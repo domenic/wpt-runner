@@ -34,7 +34,7 @@
   },
   "dependencies": {
     "colors": "^1.4.0",
-    "jsdom": "^18.1.0",
+    "jsdom": "^19.0.0",
     "recursive-readdir": "^2.2.2",
     "st": "^3.0.0",
     "yargs": "^17.2.1"
