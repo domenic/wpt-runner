@@ -37,10 +37,10 @@
     "jsdom": "^19.0.0",
     "recursive-readdir": "^2.2.2",
     "st": "^3.0.0",
-    "yargs": "^17.2.1"
+    "yargs": "^17.3.0"
   },
   "devDependencies": {
     "copyfiles": "^2.4.1",
-    "eslint": "^8.2.0"
+    "eslint": "^8.4.1"
   }
 }
