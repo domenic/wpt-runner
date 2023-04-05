@@ -19,15 +19,15 @@
   "files": [
     "lib/",
     "bin/",
+    "common/",
     "testharness/"
   ],
   "scripts": {
     "test": "node test/runner.js",
     "lint": "eslint .",
-    "prepare": "npm run copy-testharness",
-    "pretest": "npm run copy-resources",
+    "prepare": "npm run copy-testharness && npm run copy-common",
     "copy-testharness": "copyfiles -u 2 wpt/resources/testharness.js wpt/resources/idlharness.js wpt/resources/webidl2/lib/webidl2.js testharness/",
-    "copy-resources": "copyfiles -u 2 wpt/resources/testharness.js test/tests/resources/"
+    "copy-common": "copyfiles -u 2 wpt/common/gc.js common/"
   },
   "engines": {
     "node": ">= 16"
