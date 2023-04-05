@@ -4,7 +4,7 @@
 const path = require("path");
 const wptRunner = require("..");
 
-const argv = require("yargs")
+const { argv } = require("yargs")
   .command("$0 <path>", "Runs the web platform tests at the given path, e.g. wpt/dom/nodes/")
   .option("root-url", {
     description: "The relative URL path for the tests at <path>, e.g. dom/nodes/",
@@ -17,8 +17,7 @@ const argv = require("yargs")
     alias: "s",
     type: "string",
     requiresArg: true
-  })
-  .argv;
+  });
 
 const testsPath = argv.path;
 const rootURL = argv["root-url"];
