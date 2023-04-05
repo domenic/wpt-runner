@@ -30,17 +30,18 @@
     "copy-resources": "copyfiles -u 2 wpt/resources/testharness.js test/tests/resources/"
   },
   "engines": {
-    "node": ">= 12"
+    "node": ">= 16"
   },
   "dependencies": {
     "colors": "^1.4.0",
-    "jsdom": "^19.0.0",
-    "recursive-readdir": "^2.2.2",
+    "jsdom": "^21.1.1",
+    "recursive-readdir": "^2.2.3",
     "st": "^3.0.0",
-    "yargs": "^17.3.0"
+    "yargs": "^17.7.1"
   },
   "devDependencies": {
+    "@domenic/eslint-config": "^3.0.0",
     "copyfiles": "^2.4.1",
-    "eslint": "^8.4.1"
+    "eslint": "^8.37.0"
   }
 }
