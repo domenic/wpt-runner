@@ -30,7 +30,7 @@
     "copy-common": "copyfiles -u 2 wpt/common/gc.js common/"
   },
   "engines": {
-    "node": ">= 16"
+    "node": ">= 22"
   },
   "dependencies": {
     "colors": "^1.4.0",
