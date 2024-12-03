@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 "use strict";
-/* eslint-disable no-console, no-process-exit */
 const path = require("path");
 const wptRunner = require("..");
 

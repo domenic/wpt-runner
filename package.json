@@ -24,24 +24,22 @@
   ],
   "scripts": {
     "test": "node test/runner.js",
-    "lint": "eslint .",
+    "lint": "eslint",
     "prepare": "npm run copy-testharness && npm run copy-common",
-    "copy-testharness": "copyfiles -u 2 wpt/resources/testharness.js wpt/resources/idlharness.js wpt/resources/webidl2/lib/webidl2.js testharness/",
-    "copy-common": "copyfiles -u 2 wpt/common/gc.js common/"
+    "copy-testharness": "mkdir -p testharness/ && cp wpt/resources/testharness.js wpt/resources/idlharness.js wpt/resources/webidl2/lib/webidl2.js testharness/",
+    "copy-common": "mkdir -p common/ && cp wpt/common/gc.js common/"
   },
   "engines": {
     "node": ">= 22"
   },
   "dependencies": {
-    "colors": "^1.4.0",
-    "jsdom": "^21.1.1",
-    "recursive-readdir": "^2.2.3",
-    "st": "^3.0.0",
-    "yargs": "^17.7.1"
+    "jsdom": "^25.0.1",
+    "st": "^3.0.1",
+    "yargs": "^17.7.2"
   },
   "devDependencies": {
-    "@domenic/eslint-config": "^3.0.0",
-    "copyfiles": "^2.4.1",
-    "eslint": "^8.37.0"
+    "@domenic/eslint-config": "^4.0.1",
+    "eslint": "^9.16.0",
+    "globals": "15.13.0"
   }
 }
