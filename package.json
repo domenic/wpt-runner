@@ -33,13 +33,13 @@
     "node": ">= 22"
   },
   "dependencies": {
-    "jsdom": "^25.0.1",
-    "st": "^3.0.1",
-    "yargs": "^17.7.2"
+    "jsdom": "^27.0.0",
+    "st": "^3.0.3",
+    "yargs": "^18.0.0"
   },
   "devDependencies": {
     "@domenic/eslint-config": "^4.0.1",
-    "eslint": "^9.16.0",
-    "globals": "15.13.0"
+    "eslint": "^9.37.0",
+    "globals": "^16.4.0"
   }
 }
