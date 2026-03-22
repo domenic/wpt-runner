@@ -30,16 +30,16 @@
     "copy-common": "mkdir -p common/ && cp wpt/common/gc.js common/"
   },
   "engines": {
-    "node": ">= 22"
+    "node": ">= 22.13.0"
   },
   "dependencies": {
-    "jsdom": "^27.0.0",
+    "jsdom": "^29.0.1",
     "st": "^3.0.3",
     "yargs": "^18.0.0"
   },
   "devDependencies": {
-    "@domenic/eslint-config": "^4.0.1",
-    "eslint": "^9.37.0",
-    "globals": "^16.4.0"
+    "@domenic/eslint-config": "^5.1.0",
+    "eslint": "^10.1.0",
+    "globals": "^17.4.0"
   }
 }
