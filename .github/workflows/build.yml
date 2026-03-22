@@ -1,9 +1,11 @@
 name: Build
+
 on:
   pull_request:
     branches: [main]
   push:
     branches: [main]
+
 jobs:
   build:
     name: Lint and tests
@@ -15,12 +17,12 @@ jobs:
           - 22
           - latest
     steps:
-    - uses: actions/checkout@v5
-      with:
-        submodules: recursive
-    - uses: actions/setup-node@v5
-      with:
-        node-version: ${{ matrix.node-version }}
-    - run: npm ci
-    - run: npm run lint
-    - run: npm test
+      - uses: actions/checkout@v6
+        with:
+          submodules: recursive
+      - uses: actions/setup-node@v6
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: npm ci
+      - run: npm run lint
+      - run: npm test
